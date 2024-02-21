@@ -15,22 +15,14 @@ class Post(models.Model):
         self.full_clean()
         super().save(*args, **kwargs)
 
+    #classe Model import metodos create, remove etc..
     @classmethod
-    def create(cls, title):
-        return cls.objects.create(title=title)
-
     def validate(self):
         if not self.id:
             raise DomainException("Post id is required")
 
         if not self.title:
             raise DomainException("Post title is required")
-
-    def add_post(self, post):
-        self.posts.add(post)
-
-    def remove_post(self, post):
-        self.posts.remove(post)
 
 class DomainException(Exception):
     pass
