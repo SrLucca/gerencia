@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from entities.models import Post
+from main.domain.posts.entities.models import Post
 
 class PostSerializer(serializers.ModelSerializer):
     class Meta:

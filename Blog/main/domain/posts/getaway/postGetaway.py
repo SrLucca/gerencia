@@ -1,5 +1,5 @@
-from posts.entities.models import Post
-from serializer.serializers import PostSerializer
+from main.domain.posts.entities.models import Post
+from main.domain.posts.serializer.serializers import PostSerializer
 from django.http import JsonResponse
 
 class PostGateway:
