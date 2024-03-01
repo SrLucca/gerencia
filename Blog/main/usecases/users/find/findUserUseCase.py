@@ -1,12 +1,9 @@
 from main.domain.users.getaway.userGetaway import UserGateway
 
-class ListUserUseCase:
-    
-    def find(id):
-        user = UserGateway.find(id=id)
-        return user
+class FindUserUseCase:
 
-    def list():
-        users = UserGateway.list()
-        return users
+    def find(self, uuid):
+        getaway = UserGateway()
+        posts = getaway.list()
+        return posts
         

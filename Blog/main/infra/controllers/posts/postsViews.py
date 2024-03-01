@@ -17,4 +17,4 @@ class PostController(APIView):
     def get(self, request):
         use_case = ListPostUseCase()
         posts = use_case.list()
-        return posts
+        return Response(posts)
