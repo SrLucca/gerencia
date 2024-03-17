@@ -14,7 +14,7 @@ class PostController(APIView):
         post_gateway = PostGateway()
         add_post_use_case = AddPostUseCase(post_gateway)
 
-        serializer = AddPostRequestSerializer(data=request.data)
+        serializer = AddPostRequestSerializer(data=request.data) #passar input do request
         if serializer.is_valid():
             post = add_post_use_case.execute(serializer.data)
             return Response(post)
